@@ -1,0 +1,35 @@
+package basic;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        double min_value = 1, average_value = 0, max_value = 0, numbers_summ = 0;
+
+        double[] random_number_array = new double[10];
+
+        for (int i = 0; i <= random_number_array.length - 1; i++) {
+            random_number_array[i] = Math.random();
+            }
+
+        for (int i = 0; i <= random_number_array.length - 1; i++){
+
+            numbers_summ += random_number_array[i];
+
+            if (random_number_array[i] < min_value){
+                min_value = random_number_array[i];
+                continue;
+            }
+
+            if (random_number_array[i] > max_value){
+                max_value = random_number_array[i];
+            }
+        }
+
+        average_value = numbers_summ / random_number_array.length;
+
+        System.out.println("min_value = " + min_value);
+        System.out.println("max_value = " + max_value);
+        System.out.println("average_value = " + average_value);
+    }
+}
