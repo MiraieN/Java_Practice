@@ -1,0 +1,50 @@
+package basic;
+
+import java.util.Scanner;
+
+public class Main {
+
+    static Scanner input = new Scanner(System.in);
+
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        int temp = 0;
+        for(int i=0; i < n; i++){
+            for(int j=1; j < (n-i); j++){
+                if(arr[j-1] > arr[j]){
+                    //swap elements
+                    temp = arr[j-1];
+                    arr[j-1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Input array size");
+        int array_size = input.nextInt();
+        int arr[] = new int[array_size];
+
+        for (int i = 0; i < arr.length; i++) {
+            double random_double = Math.round(Math.random()* 9 - 1);
+            int random_int = (int)random_double;
+            arr[i] = random_int;
+        }
+
+        System.out.println("Array Before Bubble Sort");
+        for(int i=0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        bubbleSort(arr);//sorting array elements using bubble sort
+
+        System.out.println("Array After Bubble Sort");
+        for(int i=0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+
+    }
+}
