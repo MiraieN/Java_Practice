@@ -1,0 +1,29 @@
+package basic;
+
+import java.util.Scanner;
+
+public class My_class {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Insert the array length: ");
+        int array_length = input.nextInt();
+        System.out.println("Insert the number should be erased from the array: ");
+        String _default = input.next();
+
+        int[] array = new int[array_length];
+
+        for (int i = 0; i < array_length; i ++) {
+
+            array[i] = i;
+            String line = Integer.toString(array[i]);
+
+            String new_line = line.replaceAll(_default, "*");
+
+            System.out.println(new_line);
+        }
+
+    }
+}
